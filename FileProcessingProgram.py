@@ -31,7 +31,7 @@ while True:
 
 os.chdir(D1)
 
-file_name = input("Enter what you would like the file to be named:")
+file_name = input(str("Enter what you would like the file to be named:"))
 
 name = input("Enter Your name:")
 
@@ -44,7 +44,9 @@ x = name, address, phone
 y = open(file_name, 'w')
 y.write(str(x))
 
-z = file_name.txt
 
-open(z, 'r')
-file_name.txt.read()
+f = open(file_name,'r')
+f.read()
+print(f.readline())
+input('Thank you for using the program, press any key to close!')
+exit()
