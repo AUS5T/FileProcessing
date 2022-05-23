@@ -1,9 +1,12 @@
 #Assignment 10.1 File Processing Program
 #Austin Miller
 
+from genericpath import isdir
 import os #importing os library
 
 import logging #importing logging
+
+import os.path
 
 # DEBUG: Detailed information, typically of interest only when diagnosing problems.
 
@@ -15,18 +18,18 @@ import logging #importing logging
 
 # CRITICAL: A serious error, indicating that the program itself may be unable to continue running.
 
-
 D1 = input("Directory path to save file in:") #Asking for directory
 
 while True:
-    if not os.path.exists(D1):
-        print("Path does not exist")
-        continue
-    if not os.path.isdir(D1):
-        print("Path does not exist")
-        continue
+    isdir = os.path.isdir(D1)
+    if isdir is True:
+        print("Directory exists!")
+    elif isdir is False:
+        print("Error with directory, or it does not exist, please run the program again with a correct directory.")
+        exit()  
     break
-print("Path exists!")
+
+os.chdir(D1)
 
 file_name = input("Enter what you would like the file to be named:")
 
@@ -38,7 +41,10 @@ phone = input("Enter your phone number:")
 
 x = name, address, phone
 
-open(D1, 'w+')
-y = open(file_name, 'w+')
+y = open(file_name, 'w')
 y.write(str(x))
 
+z = file_name.txt
+
+open(z, 'r')
+file_name.txt.read()
